@@ -105,10 +105,9 @@ namespace SkryptoweProjekt
                     "opd" => "Operations Department",
                     _ => "UNKNOWN DEPARTMENT"
                 };
+
                 employeeToDepartmentChange.DepartamentLong = newDepartmentLong;
-
                 Console.WriteLine("Department changed successfully.");
-
                 return true;
             }
             else
@@ -119,7 +118,6 @@ namespace SkryptoweProjekt
         }
 
         private static int nextId = 1;
-
         private int id;
         private string Name { get; set; }
         private string Surname { get; set; }
@@ -150,7 +148,7 @@ namespace SkryptoweProjekt
         public void Show()
         {
             Console.WriteLine($"ID: {id}");
-            Console.WriteLine($"{Name}, {DepartamentLong}, salary (PLN): {Salary}, hired: {WhenHired}");
+            Console.WriteLine($"{Name} {Surname}, {DepartamentLong}, salary (PLN): {Salary}, hired: {WhenHired}");
         }       
     }
 }
