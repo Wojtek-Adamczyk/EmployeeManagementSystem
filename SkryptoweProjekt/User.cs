@@ -54,6 +54,70 @@ namespace SkryptoweProjekt
             }
         }
 
+        public static bool ChangeSalary(List<User> employeesList)
+        {
+            employeesList.ForEach(employee => employee.Show());
+
+            Console.Write("Provide the ID of the employee to change the pay: ");
+            var inputId = int.Parse(Console.ReadLine());
+
+            var employeeToSalaryChange = employeesList.FirstOrDefault(e => e.id == inputId);
+            if (employeeToSalaryChange != null)
+            {
+                Console.Write("Provide new salary: ");
+                var newSalary = double.Parse(Console.ReadLine());
+                if (newSalary <= 0)
+                    Console.WriteLine("Salary cannot be negative");
+                else
+                {
+                    employeeToSalaryChange.Salary = newSalary;
+                    Console.WriteLine("Salary changed successfully.");
+                }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Employee not found.");
+                return false;
+            }
+        }
+
+        public static bool ChangeDepartment(List<User> employeesList)
+        {
+            employeesList.ForEach(employee => employee.Show());
+
+            Console.Write("Provide the ID of the employee to change the department: ");
+            var inputId = int.Parse(Console.ReadLine());
+
+            var employeeToDepartmentChange = employeesList.FirstOrDefault(e => e.id == inputId);
+            if (employeeToDepartmentChange != null)
+            {
+                Console.Write("Provide new department (short): ");
+                var newDepartment = Console.ReadLine();
+
+                employeeToDepartmentChange.DepartamentShort = newDepartment;
+
+                string newDepartmentLong = newDepartment switch
+                {
+                    "gm" => "General Management",
+                    "sld" => "Sales Department",
+                    "hr" => "Human Resources",
+                    "opd" => "Operations Department",
+                    _ => "UNKNOWN DEPARTMENT"
+                };
+                employeeToDepartmentChange.DepartamentLong = newDepartmentLong;
+
+                Console.WriteLine("Department changed successfully.");
+
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Employee not found.");
+                return false;
+            }
+        }
+
         private static int nextId = 1;
 
         private int id;

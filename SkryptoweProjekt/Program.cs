@@ -56,6 +56,16 @@ namespace SkryptoweProjekt
                         Menu.CallMenu();
                     }
                     else if (input == 5)
+                    {
+                        User.ChangeSalary(employeesList);
+                        Menu.CallMenu();
+                    }
+                    else if (input == 6)
+                    {
+                        User.ChangeDepartment(employeesList);
+                        Menu.CallMenu();
+                    }
+                    else if (input == 7)
                         Login.LogIn();
                 }
             }

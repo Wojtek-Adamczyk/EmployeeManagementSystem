@@ -15,7 +15,9 @@ namespace SkryptoweProjekt
             Console.WriteLine("2. Search employees by:");
             Console.WriteLine("3. Add new employee");
             Console.WriteLine("4. Delete employee");
-            Console.WriteLine("5. Log out");
+            Console.WriteLine("5. Change employee salary");
+            Console.WriteLine("6. Change employee departament");
+            Console.WriteLine("7. Log out");
         }
 
         public static void SearchEmployee()
