@@ -12,6 +12,8 @@ namespace SkryptoweProjekt
         {
             Console.Write("Provide new employee's name: ");
             string inputName = Console.ReadLine();
+            Console.Write("Provide new employee's surname: ");
+            string inputSurname = Console.ReadLine();
             Console.Write("Provide department short name: ");
             string inputDepartment = Console.ReadLine();
             Console.Write("Provide new salary: ");
@@ -28,7 +30,7 @@ namespace SkryptoweProjekt
                 _ => "UNKNOWN DEPARTMENT"
             };
 
-            employeesList.Add(new User(inputName, inputDepartment, inputDepartmentLong, inputSalary, inputDate));
+            employeesList.Add(new User(inputName, inputSurname, inputDepartment, inputDepartmentLong, inputSalary, inputDate));
         }
 
         public static bool DeleteEmployee(List<User> employeesList)
@@ -38,7 +40,7 @@ namespace SkryptoweProjekt
             Console.Write("Provide the ID of the employee to be dismissed: ");
             var inputId = int.Parse(Console.ReadLine());
 
-            var employeeToRemove = employeesList.FirstOrDefault(employee => employee.id == inputId);
+            var employeeToRemove = employeesList.FirstOrDefault(e => e.id == inputId);
             if (employeeToRemove != null)
             {
                 employeesList.Remove(employeeToRemove);
@@ -55,17 +57,19 @@ namespace SkryptoweProjekt
         private static int nextId = 1;
 
         private int id;
-        private string Name { get; set; }       
+        private string Name { get; set; }
+        private string Surname { get; set; }
         private string DepartamentShort { get; set; }
         private string DepartamentLong { get; set; }
         private double Salary { get; set; }
         private DateTime WhenHired { get; set; }
 
-        public User(string name, string departmentShort, string departamentLong, double salary, DateTime whenhired)
+        public User(string name, string surname, string departmentShort, string departamentLong, double salary, DateTime whenhired)
         {
             id = nextId; 
             nextId++;
-            Name = name;            
+            Name = name;
+            Surname = surname;
             DepartamentShort = departmentShort;
             DepartamentLong = departamentLong;
             Salary = salary;
@@ -74,6 +78,7 @@ namespace SkryptoweProjekt
 
         public int GetId() {return id;}
         public string GetName() { return Name; }
+        public string GetSurname() { return Surname; }
         public double GetSalary() { return Salary; }
         public string GetDepartamentShort() { return DepartamentShort; }
         public DateTime GetWhenHired() { return WhenHired; }

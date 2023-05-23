@@ -22,9 +22,10 @@ namespace SkryptoweProjekt
         {
             Console.WriteLine();
             Console.WriteLine("1. by name");
-            Console.WriteLine("2. by departament");
-            Console.WriteLine("3. by salary");
-            Console.WriteLine("4. by date hired");
+            Console.WriteLine("2. by surname");
+            Console.WriteLine("3. by departament");
+            Console.WriteLine("4. by salary");
+            Console.WriteLine("5. by date hired");
         }   
     }
 }

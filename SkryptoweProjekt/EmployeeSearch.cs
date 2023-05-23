@@ -19,12 +19,15 @@ namespace SkryptoweProjekt
                     SearchByName(employeesList);
                     break;
                 case 2:
-                    SearchByDepartment(employeesList);
+
                     break;
                 case 3:
-                    SearchBySalary(employeesList);
+                    SearchByDepartment(employeesList);
                     break;
                 case 4:
+                    SearchBySalary(employeesList);
+                    break;
+                case 5:
                     SearchByDateHired(employeesList);
                     break;
             }
@@ -35,6 +38,14 @@ namespace SkryptoweProjekt
             Console.Write("Type name: ");
             string searchByName = Console.ReadLine();
             List<User> searchedEmployees = employeesList.Where(e => e.GetName() == searchByName).ToList();
+            searchedEmployees.ForEach(searchedEmployees => searchedEmployees.Show());
+        }
+
+        private static void SearchBySurname(List<User> employeesList)
+        {
+            Console.Write("Type surname: ");
+            string searchByName = Console.ReadLine();
+            List<User> searchedEmployees = employeesList.Where(e => e.GetSurname() == searchByName).ToList();
             searchedEmployees.ForEach(searchedEmployees => searchedEmployees.Show());
         }
 
