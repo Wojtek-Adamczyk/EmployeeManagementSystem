@@ -1,0 +1,6 @@
+﻿
+1. by name
+2. by surname
+3. by departament
+4. by salary
+5. by date hired

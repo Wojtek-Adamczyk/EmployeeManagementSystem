@@ -1,0 +1,8 @@
+﻿
+1. Show all employees
+2. Search employees by:
+3. Add new employee
+4. Delete employee
+5. Change employee salary
+6. Change employee departament
+7. Log out

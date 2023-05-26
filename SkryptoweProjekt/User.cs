@@ -143,6 +143,7 @@ namespace SkryptoweProjekt
         public string GetSurname() { return Surname; }
         public double GetSalary() { return Salary; }
         public string GetDepartamentShort() { return DepartamentShort; }
+        public string GetDepartamentLong() { return DepartamentLong; }
         public DateTime GetWhenHired() { return WhenHired; }
 
         public void Show()

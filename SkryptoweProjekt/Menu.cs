@@ -10,24 +10,17 @@ namespace SkryptoweProjekt
     {
         static public void CallMenu()
         {
-            Console.WriteLine();
-            Console.WriteLine("1. Show all employees");
-            Console.WriteLine("2. Search employees by:");
-            Console.WriteLine("3. Add new employee");
-            Console.WriteLine("4. Delete employee");
-            Console.WriteLine("5. Change employee salary");
-            Console.WriteLine("6. Change employee departament");
-            Console.WriteLine("7. Log out");
+            var menu = File.ReadAllText(@"C:\Users\wojte\source\repos\SkryptoweProjekt\SkryptoweProjekt\MenuText.txt");
+            Console.WriteLine(menu);
         }
 
-        public static void SearchEmployee()
+        public static void CallSearchMenu()
         {
-            Console.WriteLine();
-            Console.WriteLine("1. by name");
-            Console.WriteLine("2. by surname");
-            Console.WriteLine("3. by departament");
-            Console.WriteLine("4. by salary");
-            Console.WriteLine("5. by date hired");
-        }   
+            var menu = File.ReadAllText(@"C:\Users\wojte\source\repos\SkryptoweProjekt\SkryptoweProjekt\MenuSearchText.txt");
+            Console.WriteLine(menu);
+        }
+
+       
+
     }
 }

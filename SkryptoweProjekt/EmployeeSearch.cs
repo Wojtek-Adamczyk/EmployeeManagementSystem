@@ -10,7 +10,7 @@ namespace SkryptoweProjekt
     {
         public static void SearchEmployee(List<User> employeesList)
         {
-            Menu.SearchEmployee();
+            Menu.CallSearchMenu();
             var inputSearch = int.Parse(Console.ReadLine());
 
             switch (inputSearch)

@@ -2,6 +2,7 @@
 
 namespace SkryptoweProjekt
 {
+
     internal class Program
     {
         static List<User> GetEmployeesList()
@@ -28,6 +29,7 @@ namespace SkryptoweProjekt
         static void Main(string[] args)
         {
             var employeesList = GetEmployeesList();
+            
 
             if (Login.LogIn())
             {
