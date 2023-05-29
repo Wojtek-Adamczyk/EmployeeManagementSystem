@@ -150,6 +150,11 @@ namespace SkryptoweProjekt
         {
             Console.WriteLine($"ID: {id}");
             Console.WriteLine($"{Name} {Surname}, {DepartamentLong}, salary (PLN): {Salary}, hired: {WhenHired}");
-        }       
+        }
+
+        public override string ToString()
+        {
+            return $"ID: {id} \n{Name} {Surname}, {DepartamentLong}, salary (PLN): {Salary}, hired: {WhenHired}";
+        }
     }
 }

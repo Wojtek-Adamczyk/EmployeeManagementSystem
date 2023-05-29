@@ -5,4 +5,5 @@
 4. Delete employee
 5. Change employee salary
 6. Change employee departament
-7. Log out
+7. Save list to .txt file
+8. Log out

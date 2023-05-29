@@ -29,7 +29,9 @@ namespace SkryptoweProjekt
         static void Main(string[] args)
         {
             var employeesList = GetEmployeesList();
-            
+
+            string directory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string filePath = Path.Combine(directory, "Employees List.txt");          
 
             if (Login.LogIn())
             {
@@ -68,6 +70,18 @@ namespace SkryptoweProjekt
                         Menu.CallMenu();
                     }
                     else if (input == 7)
+                    {
+                        using (StreamWriter sw = new StreamWriter(filePath))
+                        {
+                            foreach (var employee in employeesList)
+                            {
+                                sw.WriteLine(employee.ToString());
+                            }
+                            Console.WriteLine("List saved succesfully");
+                        }
+                        Menu.CallMenu();
+                    }
+                    else if (input == 8)
                         Login.LogIn();
                 }
             }
