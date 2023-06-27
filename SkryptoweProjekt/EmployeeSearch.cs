@@ -19,10 +19,10 @@ namespace SkryptoweProjekt
                     SearchByName(employeesList);
                     break;
                 case 2:
-
+                    SearchBySurname(employeesList);
                     break;
                 case 3:
-                    SearchByDepartment(employeesList);
+                    SearchByDepartent(employeesList);
                     break;
                 case 4:
                     SearchBySalary(employeesList);
@@ -49,7 +49,7 @@ namespace SkryptoweProjekt
             searchedEmployees.ForEach(searchedEmployees => searchedEmployees.Show());
         }
 
-        private static void SearchByDepartment(List<User> employeesList)
+        private static void SearchByDepartent(List<User> employeesList)
         {
             Console.Write("Department (short): ");
             string searchByDepartment = Console.ReadLine();

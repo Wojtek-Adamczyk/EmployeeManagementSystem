@@ -2,7 +2,6 @@
 
 namespace SkryptoweProjekt
 {
-
     internal class Program
     {
         static List<User> GetEmployeesList()

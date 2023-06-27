@@ -11,23 +11,35 @@ namespace SkryptoweProjekt
     {
         public static bool LogIn()
         {
-            Console.Write("Email: ");
-            string email = Console.ReadLine();
-            string pattern = @"^\w+(?:\.\w+)*@\w+\.(?:com|pl)$";
-            bool isCorrect = Regex.IsMatch(email, pattern);
-            if (isCorrect)
+            bool isLogged = false;
+
+            while (!isLogged)
             {
-                Console.WriteLine("password = 'admin'");
-                Console.Write("Enter password: ");
-                string password = Console.ReadLine();
-                if (password == "admin")
+                Console.Write("Email: ");
+                string email = Console.ReadLine();
+                string pattern = @"^\w+(?:\.\w+)*@\w+\.(?:com|pl)$";
+                bool isEmailValid = Regex.IsMatch(email, pattern);
+
+                if (isEmailValid)
                 {
-                    Menu.CallMenu();
-                    return true;
+                    Console.WriteLine("password = 'admin'");
+                    Console.Write("Enter password: ");
+                    string password = Console.ReadLine();
+
+                    if (password == "admin")
+                    {
+                        Menu.CallMenu();
+                        isLogged = true;
+                    }
+                }
+
+                if (!isLogged)
+                {
+                    Console.WriteLine("Wrong email or password. Please try again.");
                 }
             }
 
-            throw new Exception("Wrong email or password");
+            return true;
         }
     }
 }

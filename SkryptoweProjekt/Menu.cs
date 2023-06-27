@@ -10,17 +10,14 @@ namespace SkryptoweProjekt
     {
         static public void CallMenu()
         {
-            var menu = File.ReadAllText(@"C:\Users\wojte\source\repos\SkryptoweProjekt\SkryptoweProjekt\MenuText.txt");
-            Console.WriteLine(menu);
+            var menu = File.ReadAllText("MenuText.txt");
+            Console.WriteLine(menu);            
         }
 
         public static void CallSearchMenu()
         {
-            var menu = File.ReadAllText(@"C:\Users\wojte\source\repos\SkryptoweProjekt\SkryptoweProjekt\MenuSearchText.txt");
+            var menu = File.ReadAllText("MenuSearchText.txt");
             Console.WriteLine(menu);
         }
-
-       
-
     }
 }
